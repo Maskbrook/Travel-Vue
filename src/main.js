@@ -9,7 +9,7 @@ import 'styles/reset.css'
 // border.css解决1像素边框问题
 import 'styles/border.css'
 import 'styles/iconfont.css'
-import 'swiper/dist/css/swiper.css'
+import 'swiper/dist/css/swiper.css' // 引入swiper的css样式
 
 Vue.config.productionTip = false
 // fastclick用于解决移动端点击300ms延迟
