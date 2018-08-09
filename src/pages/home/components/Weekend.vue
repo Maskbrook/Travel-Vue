@@ -45,7 +45,6 @@ export default {
 @import '~styles/mixins.styl'
   .title
     line-height: .8rem
-    marigin-top: .2rem
     background: #eee
     text-indent: .2rem
   .item-img-wrapper
