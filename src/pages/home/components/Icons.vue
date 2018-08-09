@@ -80,7 +80,6 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
-
   .icons
     overflow: hidden
     width: 100%

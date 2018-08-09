@@ -22,7 +22,8 @@ export default {
         // 分页器
         pagination: {
           el: '.swiper-pagination'
-        }
+        },
+        autoplay: true
       },
       swiperList: [{
         id: '0001',
