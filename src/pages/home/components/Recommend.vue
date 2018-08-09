@@ -2,7 +2,7 @@
   <div>
     <div class="title">热门推荐</div>
       <ul>
-        <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+        <li class="item border-bottom" v-for="item of list" :key="item.id">
           <img class="item-img" :src="item.imgUrl" />
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -17,30 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/12/126471e0966aca5ba3.img.jpg_200x200_f1286016.jpg',
-        title: '北京国际鲜花港',
-        desc: '起伏的花坛，绿色的草坪，游人如织'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/12/126471e0966aca5ba3.img.jpg_200x200_f1286016.jpg',
-        title: '北京国际鲜花港',
-        desc: '起伏的花坛，绿色的草坪，游人如织'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/12/126471e0966aca5ba3.img.jpg_200x200_f1286016.jpg',
-        title: '北京国际鲜花港',
-        desc: '起伏的花坛，绿色的草坪，游人如织起伏的花坛，绿色的草坪，游人如织'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/12/126471e0966aca5ba3.img.jpg_200x200_f1286016.jpg',
-        title: '北京国际鲜花港',
-        desc: '鲜花铺就，起伏的花坛，绿色的草坪'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
