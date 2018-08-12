@@ -21,7 +21,9 @@ export default{
   },
   data () {
     return {
-      touchStatus: false
+      touchStatus: false,
+      startY: 0,
+      timer: null
     }
   },
   computed: {
@@ -33,6 +35,9 @@ export default{
       return letters
     }
   },
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop
+  },
   methods: {
     handleLetterClick (element) {
       this.$emit('change', element.target.innerText)
@@ -42,13 +47,17 @@ export default{
     },
     handleTouchMove (element) {
       if (this.touchStatus) {
-        // 79:导航栏+搜索框高度 20:单个字母高度
-        const startY = this.$refs['A'][0].offsetTop
-        const touchY = element.touches[0].clientY - 79
-        const index = Math.floor((touchY - startY) / 20)
-        if (index >= 0 && index < this.letters.length) {
-          this.$emit('change', this.letters[index])
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
+        this.timer = setTimeout(() => {
+          // 79:导航栏+搜索框高度 20:单个字母高度
+          const touchY = element.touches[0].clientY - 79
+          const index = Math.floor((touchY - this.startY) / 20)
+          if (index >= 0 && index < this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+        }, 16)
       }
     },
     handleTouchEnd () {
