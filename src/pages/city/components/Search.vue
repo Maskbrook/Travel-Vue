@@ -18,7 +18,10 @@
           class="search-item  border-bottom"
           v-for="item of list" 
           :key="item.id"
-        >{{item.name}}</li>
+          @click="handleCityClick(item.name)"
+        >
+          {{item.name}}
+        </li>
         <li class="search-item border-bottom" v-show="hasNoData">
           没有找到匹配数据
         </li>
@@ -40,6 +43,12 @@ export default {
       keyword: '', // 用于搜索的关键词
       list: [], // 搜索结果
       timer: null // 用于函数节流
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   },
   computed: {
