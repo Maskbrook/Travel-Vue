@@ -51,8 +51,8 @@ export default{
       border-radius: .1rem
       color: #ccc
     .header-right
-      width: 1.6rem
       float: right
+      margin: 0 .15rem
       text-align: center
       color: #fff
       .arrow-icon
