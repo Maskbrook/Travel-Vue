@@ -32,8 +32,8 @@ export default {
           el: '.swiper-pagination',
           type: 'fraction'
         },
-        observeParents: true,
-        observer: true
+        observeParents: true, // 当Swiper的父元素变化时，例如window.resize，Swiper更新。
+        observer: true // 改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper
       }
     }
   },
