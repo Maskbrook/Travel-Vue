@@ -1,5 +1,6 @@
 <template>
 	<ul class="item-list">
+    <!-- .prevent事件修饰符，可以组织touchstart的默认行为 -->
    <li 
     class="item" 
     v-for="item of letters" 
