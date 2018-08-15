@@ -82,6 +82,6 @@ export default{
     .item
       text-align: center
       line-height: .4rem
-      font-size: .15rem
+      font-size: .2rem
       color: $bgColor
 </style>
